@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { ST } from "next/dist/next-server/lib/utils";
 import * as Styles from "./styles";
 
-const Card = ({ data }: any) => {
+const Card = ({ data, onClick }: Props) => {
   return (
-    <Styles.Container>
+    <Styles.Container onClick={onClick}>
       <div>
         <Styles.Title>{data.title}</Styles.Title>
         <Styles.NewsSite>{data.newsSite}</Styles.NewsSite>
@@ -13,6 +12,11 @@ const Card = ({ data }: any) => {
       <Styles.Image src={data.imageUrl} alt="Sfnews" />
     </Styles.Container>
   );
+};
+
+type Props = {
+  data: any;
+  onClick: () => void;
 };
 
 export default Card;

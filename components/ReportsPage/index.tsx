@@ -1,10 +1,13 @@
 import Card from "@components/Card";
+import SeeMoreBtn from "@components/SeeMoreBtn";
+import { useRouter } from "next/router";
 import useSWR from "swr";
 import fetcher from "util/fetch";
 
 import * as Styles from "./styles";
 
-const ReportsPage = () => {
+const ReportsPage = ({ isMainPage = false }) => {
+  const router = useRouter();
   const { data: sfnewsReports } = useSWR(
     `https://api.spaceflightnewsapi.net/v3/reports`,
     fetcher
@@ -14,7 +17,26 @@ const ReportsPage = () => {
       <Styles.Header>Reports</Styles.Header>
       <Styles.CardContainer>
         {sfnewsReports ? (
-          sfnewsReports.map((news: any) => <Card key={news.id} data={news} />)
+          isMainPage ? (
+            <>
+              {sfnewsReports.slice(0, 3).map((news: any) => (
+                <Card
+                  key={news.id}
+                  data={news}
+                  onClick={() => router.push(`/reports/${news.id}`)}
+                />
+              ))}
+              <SeeMoreBtn page="reports" />
+            </>
+          ) : (
+            sfnewsReports.map((news: any) => (
+              <Card
+                key={news.id}
+                data={news}
+                onClick={() => router.push(`/reports/${news.id}`)}
+              />
+            ))
+          )
         ) : (
           <div>Loading...</div>
         )}
