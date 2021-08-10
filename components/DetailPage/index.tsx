@@ -6,6 +6,7 @@ import Link from "next/link";
 import dayjs from "dayjs";
 
 import * as Styles from "./styles";
+import Loading from "@components/Transitions/loader";
 
 const DetailPage = ({ page, id }: Props) => {
   const { data: detailPageData } = useSWR(
@@ -28,7 +29,9 @@ const DetailPage = ({ page, id }: Props) => {
           <div>{detailPageData.summary}</div>
         </>
       ) : (
-        <div>Loading...</div>
+        <div className="h-screen flex justify-center items-center">
+          <Loading />
+        </div>
       )}
     </Styles.Container>
   );

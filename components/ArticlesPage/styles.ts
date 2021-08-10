@@ -1,4 +1,4 @@
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 export const Container = tw.div`
     container
@@ -14,10 +14,14 @@ export const Header = tw.h1`
     my-10
 `;
 
-export const CardContainer = tw.div`
-    flex 
-    justify-center 
-    items-center 
-    flex-wrap 
-    gap-10
+export const CardContainer = styled.div`
+  .fade {
+    ${() => tw`
+            flex
+            justify-center
+            items-center
+            flex-wrap
+            gap-10
+        `}
+  }
 `;
