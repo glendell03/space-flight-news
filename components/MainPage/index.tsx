@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import ArticlesPage from "@components/ArticlesPage";
 import BlogsPage from "@components/BlogsPage";
-import Card from "@components/Card";
 import ReportsPage from "@components/ReportsPage";
+import { urlObjectKeys } from "next/dist/next-server/lib/utils";
 
 import * as Styles from "./styles";
 

@@ -9,8 +9,17 @@ export const Container = tw.div`
 export const Header = tw.h1`
     text-5xl
     text-center
+    flex
+    justify-center
+    items-center
     tracking-widest
     uppercase
-    my-40
-    px-5
+    h-96
+    w-full
+    text-white
+    bg-hero
+    object-cover
+`;
+
+export const Background = tw.image`
 `;
