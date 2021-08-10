@@ -19,6 +19,12 @@
       "@features/*": ["features/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/_document.js",
+    "twin.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
