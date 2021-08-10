@@ -1,6 +1,7 @@
 import Card from "@components/Card";
 import SeeMoreBtn from "@components/SeeMoreBtn";
 import FadeIn from "@components/Transitions/fadeIn";
+import Loading from "@components/Transitions/loader";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import fetcher from "util/fetch";
@@ -19,28 +20,30 @@ const BlogsPage = ({ isMainPage = false }) => {
       <FadeIn>
         <Styles.CardContainer>
           {sfnewsBlog ? (
-            isMainPage ? (
-              <>
-                {sfnewsBlog.slice(0, 3).map((news: any) => (
+            <FadeIn className="fade">
+              {isMainPage ? (
+                <>
+                  {sfnewsBlog.slice(0, 3).map((news: any) => (
+                    <Card
+                      key={news.id}
+                      data={news}
+                      onClick={() => router.push(`/blogs/${news.id}`)}
+                    />
+                  ))}
+                  <SeeMoreBtn page="blogs" />
+                </>
+              ) : (
+                sfnewsBlog.map((news: any) => (
                   <Card
                     key={news.id}
                     data={news}
                     onClick={() => router.push(`/blogs/${news.id}`)}
                   />
-                ))}
-                <SeeMoreBtn page="blogs" />
-              </>
-            ) : (
-              sfnewsBlog.map((news: any) => (
-                <Card
-                  key={news.id}
-                  data={news}
-                  onClick={() => router.push(`/blogs/${news.id}`)}
-                />
-              ))
-            )
+                ))
+              )}
+            </FadeIn>
           ) : (
-            <div>Loading...</div>
+            <Loading />
           )}
         </Styles.CardContainer>
       </FadeIn>

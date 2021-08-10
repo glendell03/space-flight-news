@@ -11,6 +11,9 @@ export const Container = tw.div`
     border
     shadow-xl
     cursor-pointer
+    hover:bg-gray-200
+    transition
+    duration-300 ease-in-out
 `;
 
 export const Text = tw.p`

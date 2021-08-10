@@ -12,6 +12,9 @@ export const Container = tw.div`
     flex-col
     justify-between
     cursor-pointer
+    hover:bg-gray-200
+    transition
+    duration-300 ease-in-out
 `;
 
 export const Image = tw.img`
