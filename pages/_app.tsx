@@ -5,15 +5,13 @@ import "../styles/globals.css";
 import GlobalStyles from "./../components/GlobalStyles";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-import { Provider } from "react-redux";
-import store from "store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
+    <div>
       <GlobalStyles />
       <Component {...pageProps} />
-    </Provider>
+    </div>
   );
 }
 export default MyApp;

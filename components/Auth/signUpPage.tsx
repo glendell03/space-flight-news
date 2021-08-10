@@ -2,14 +2,10 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import * as Styles from "./styles";
-
-import { useDispatch } from "react-redux";
-import { user } from "@features/auth/userSlice";
 import { useRouter } from "next/dist/client/router";
 
 const SignUpPage = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,

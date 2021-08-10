@@ -2,14 +2,10 @@ import { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import * as Styles from "./styles";
-
-import { useDispatch, useSelector } from "react-redux";
-import { user } from "@features/auth/userSlice";
 import { useRouter } from "next/dist/client/router";
 
 const SignInPage = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const [userData, setUserData] = useState({ username: "", password: "" });
 
   const {
@@ -32,7 +28,6 @@ const SignInPage = () => {
           foundUser.password === userData.password)
       ) {
         router.push("/");
-        dispatch(user(foundUser));
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
