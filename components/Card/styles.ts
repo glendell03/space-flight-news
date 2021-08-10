@@ -11,6 +11,7 @@ export const Container = tw.div`
     flex
     flex-col
     justify-between
+    cursor-pointer
 `;
 
 export const Image = tw.img`
@@ -26,9 +27,9 @@ export const NewsSite = tw.div`
     px-3
     w-max
     rounded-lg
-`
+`;
 
 export const Title = tw.h1`
     font-semibold
     mb-2
-`
+`;

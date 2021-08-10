@@ -11,20 +11,6 @@ export const Header = tw.h1`
     text-center
     tracking-widest
     uppercase
-    my-10
-`;
-
-export const SubHeader = tw.h2`
-    text-3xl
-    font-semibold
-    my-10
-    
-`;
-
-export const CardContainer = tw.div`
-    flex 
-    justify-center 
-    items-center 
-    flex-wrap 
-    gap-10
+    my-40
+    px-5
 `;
