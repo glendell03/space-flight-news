@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
+import MainPage from "@components/MainPage";
 
 export default function Home() {
   const router = useRouter();
@@ -15,7 +16,7 @@ export default function Home() {
 
   return (
     <div>
-      <p className="text-7xl">Hello</p>
+      <MainPage />
     </div>
   );
 }
