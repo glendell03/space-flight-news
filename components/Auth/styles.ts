@@ -1,39 +1,94 @@
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 export const Container = tw.div`
-    container
-    mx-auto
-    h-screen
-    flex
-    justify-center
-    items-center
+   container
+   mx-auto
+   h-screen
+   flex
+   justify-center
+   items-center
 `;
 
 export const Wrapper = tw.div`
-    w-1/2
+    h-4/5
+    w-4/5
+    flex
+    shadow-lg
+`;
+
+export const LeftSide = tw.div`
+    flex-1
+    p-5
+    flex
+    flex-col
+    relative
+`;
+
+export const RightSide = styled.div`
+  ${() => tw`
+    flex-1
+    bg-auth
+    object-cover
+    `}
+  background-size: cover;
+`;
+
+export const Header = tw.div`
+    text-3xl
+    my-10
+    absolute
 `;
 
 export const Title = tw.h1`
     text-2xl
-    font-semibold
     text-center
-    m-2
+    my-5
 `;
 
 export const InputContainer = tw.div`
     flex
     flex-col
+    justify-center
+    items-center
+    gap-5
 `;
 
 export const Input = tw.input`
-    border-2
-    m-2
-    p-2
+    w-96
+    h-10
+    border
+    p-3
 `;
 
 export const Button = tw.button`
-    h-10
-    m-2
-    bg-blue-500
+    w-96
+    p-3
     text-white
+    bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500
+`;
+
+export const Center = tw.div`
+    flex-1
+    flex
+    flex-col
+    justify-center
+    items-center
+`;
+
+export const Error = tw.div`
+    w-96
+    text-left
+    text-red-600
+`;
+
+export const SignUpLink = tw.div`
+    w-96
+    text-left
+    my-5
+`;
+
+export const Link = tw.a`
+    underline
+    cursor-pointer
+    text-blue-400
 `;
