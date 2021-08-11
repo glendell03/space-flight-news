@@ -10,10 +10,13 @@ export const Container = tw.div`
 `;
 
 export const Wrapper = tw.div`
-    h-4/5
-    w-4/5
+    w-full
+    h-full
+    lg:h-4/5
+    lg:w-4/5
     flex
-    shadow-lg
+    lg:shadow-lg
+
 `;
 
 export const LeftSide = tw.div`
@@ -26,7 +29,7 @@ export const LeftSide = tw.div`
 
 export const RightSide = styled.div`
   ${() => tw`
-    flex-1
+    lg:flex-1
     bg-auth
     object-cover
     `}
@@ -37,6 +40,9 @@ export const Header = tw.div`
     text-3xl
     my-10
     absolute
+    w-full
+    text-center
+    lg:text-left
 `;
 
 export const Title = tw.h1`

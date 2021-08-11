@@ -52,6 +52,7 @@ const SignInPage = () => {
                 {errors.username && (
                   <Styles.Error>This field is required</Styles.Error>
                 )}
+                
                 <Styles.Input
                   type="password"
                   placeholder="Password"
