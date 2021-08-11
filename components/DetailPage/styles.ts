@@ -2,6 +2,8 @@ import tw, { styled } from "twin.macro";
 
 export const Container = tw.div`
     container
+    my-20
+    md:my-0
     mx-auto
     h-screen
     px-10
@@ -10,14 +12,13 @@ export const Container = tw.div`
     justify-center
 `;
 
-export const Image = styled.img`
-  height: 40rem;
-  background-size: cover;
-  ${() => tw`
-        w-full
-        rounded-lg
-        object-cover
-    `};
+export const Image = tw.img`
+    h-full
+    md:h-96
+    lg:h-1/2
+    w-full
+    rounded-lg
+    object-cover
 `;
 
 export const Title = tw.h1`
