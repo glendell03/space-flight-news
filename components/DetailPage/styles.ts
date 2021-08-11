@@ -1,14 +1,23 @@
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 export const Container = tw.div`
     container
+    my-20
+    md:my-0
     mx-auto
+    h-screen
     px-10
+    flex
+    flex-col
+    justify-center
 `;
 
 export const Image = tw.img`
-    h-96
+    h-full
+    md:h-96
+    lg:h-1/2
     w-full
+    rounded-lg
     object-cover
 `;
 
