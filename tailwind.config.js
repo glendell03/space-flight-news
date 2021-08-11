@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         hero: "url('/space-bg.jpg')",
+        auth: "url('/auth-bg.jpg')",
       }),
     },
     screens: {
